@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kansas Cities Map</title>
+    <meta name="description" content="Interactive map of cities in Kansas">
+    
+    <!-- Google Fonts - Karla & Ms Madi -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Ms+Madi&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Mapbox GL CSS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid px-0">
+        
+        <main class="container-fluid px-0">
+            
+            <!-- Map section with relative positioning -->
+            <section class="map-section position-relative">
+                <div id="map" class="map-container"></div>
+                <div id="loading" class="d-flex justify-content-center align-items-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading map data...</span>
+                    </div>
+                    <span class="ms-2">Loading map data...</span>
+                </div>
+                
+                <div class="cities-overlay mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="h5 text-center"><span class="ms-madi-text">local </span> experts, expansive service area</h2>
+                        </div>
+                        <div class="card-body">
+                            <ul id="city-list" class="city-tags"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section for content below the map can go here -->
+            <section id="cta-section">
+                <div class="container text-center">
+                    <h2 class="cta-heading">Experience the PMW <span class="ms-madi-text">difference</span></h2>
+                    <div class="cta-buttons mt-3">
+                        <a href="#" class="btn mx-3">Property Management Services</a>
+                        <a href="#" class="btn mx-3">Real Estate Services</a>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="footer-container">
+                    <!-- Column 1: Logo & Social -->
+                    <div class="footer-column">
+                        <div class="footer-logo">PMW</div>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon facebook" aria-label="Facebook"></a>
+                            <a href="#" class="social-icon twitter" aria-label="Twitter"></a>
+                            <a href="#" class="social-icon instagram" aria-label="Instagram"></a>
+                            <a href="#" class="social-icon linkedin" aria-label="LinkedIn"></a>
+                            <a href="#" class="social-icon youtube" aria-label="YouTube"></a>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Contact -->
+                    <div class="footer-column footer-nav">
+                        <h5 class="footer-title">Contact</h5>
+                        <p>
+                            <a href="tel:+15551234567">(123) 456-7890</a><br>
+                            <a href="mailto:info@pmw.com">testing@pmw.com</a>
+                        </p>
+                        <p>123 Main St<br>Anywhere, FL 12345</p>
+                    </div>
+
+                    <!-- Column 3: Owners -->
+                    <div class="footer-column footer-nav">
+                        <h5 class="footer-title">Owners</h5>
+                        <ul>
+                            <li><a href="#">Owner Login</a></li>
+                            <li><a href="#">Owner Resources</a></li>
+                            <li><a href="#">Owner FAQs</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Residents -->
+                    <div class="footer-column footer-nav">
+                        <h5 class="footer-title">Residents</h5>
+                        <ul>
+                            <li><a href="#">Resident Login</a></li>
+                            <li><a href="#">Resident Resources</a></li>
+                            <li><a href="#">Resident FAQs</a></li>
+                            <li><a href="#">Resident Benefits</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 5: Property Management -->
+                    <div class="footer-column footer-nav">
+                        <h5 class="footer-title">Property Management</h5>
+                        <ul>
+                            <li><a href="#">Residential</a></li>
+                            <li><a href="#">Multi-Family</a></li>
+                            <li><a href="#">Landlord Protection</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 6: Real Estate -->
+                    <div class="footer-column footer-nav">
+                        <h5 class="footer-title">Real Estate</h5>
+                        <ul>
+                            <li><a href="#">Buyers</a></li>
+                            <li><a href="#">Sellers</a></li>
+                            <li><a href="#">Education</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 7: Calculators -->
+                    <div class="footer-column footer-nav">
+                        <h5 class="footer-title">Calculators</h5>
+                        <ul>
+                            <li><a href="#">What's My Home Worth?</a></li>
+                            <li><a href="#">ROI Calculator</a></li>
+                            <li><a href="#">Rent vs Sell Calculator</a></li>
+                            <li><a href="#">Vacancy Loss Calculator</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Mapbox GL JS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html> 

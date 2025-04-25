@@ -1,0 +1,488 @@
+/* Global styles */
+body {
+    font-family: 'Karla', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Map Section Container */
+.map-section {
+    width: 100%;
+    position: relative;
+}
+
+/* Map Container */
+.map-container {
+    width: 100%;
+    height: 783px;
+    position: relative;
+}
+
+/* Map Gradient Overlay */
+.map-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 92px);
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Loading Overlay */
+#loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+/* Cities Overlay */
+.cities-overlay {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-257px);
+    max-width: 1526px;
+    width: 100%;
+    z-index: 10;
+}
+
+.cities-overlay .card {
+    background-color: #BDD5EA;
+    border-radius: 20px;
+    border: none;
+    padding: 53px 60px 65px;
+}
+
+.cities-overlay .card-header {
+    background-color: transparent;
+    border-bottom: none;
+    padding: 0;
+}
+
+.cities-overlay .card-header h2 {
+    color: #515252;
+    font-weight: 500;
+    font-size: 55px;
+    line-height: 1.03;
+    letter-spacing: -0.2px;
+    text-align: center;
+    margin-bottom: 23px;
+}
+
+.cities-overlay .card-header h2 span {
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 1.03;
+    letter-spacing: 0;
+    text-align: center;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.cities-overlay .card-body {
+    padding: 0;
+}
+
+/* Ms Madi text styling */
+.ms-madi-text {
+    font-family: 'Ms Madi', cursive;
+    font-weight: normal;
+}
+
+/* City Tags */
+.city-tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 22px;
+    row-gap: 25px;
+    justify-content: center;
+}
+
+.city-tags li {
+    display: inline-block;
+    background-color: white;
+    border-radius: 24px;
+    padding: 14px 30px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.48;
+    letter-spacing: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.city-tags li:hover {
+    background-color: #F1572A;
+    color: white;
+}
+
+/* Mapbox Popup Customization */
+.mapboxgl-popup {
+    max-width: 200px;
+    z-index: 6;
+}
+
+.mapboxgl-popup-content {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup-content h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* City List */
+#city-list .list-group-item {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#city-list .list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Custom SVG Marker */
+.custom-marker {
+    cursor: pointer;
+    transition: transform 0.2s;
+    z-index: 6;
+}
+
+.custom-marker:hover {
+    transform: scale(1.1);
+}
+
+/* Legacy Marker Animation - keeping for reference */
+.marker {
+    background-color: #3498db;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(52, 152, 219, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+    }
+}
+
+/* Call to Action Section */
+#cta-section {
+    height: 403px;
+    width: 100%;
+    background-image: url('images/s9.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; 
+}
+
+.cta-heading {
+    font-weight: 500;
+    font-size: 55px;
+    line-height: 1.03;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: white;
+}
+
+.cta-heading .ms-madi-text {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 1.03;
+    letter-spacing: 0;
+    text-align: center;
+    margin-top: -12px;
+}
+
+.cta-buttons a.btn {
+    padding: 14px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 24px;
+    border: none;
+    background-color: #BDD5EA;
+    font-family: Karla;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.48;
+    letter-spacing: 0;
+    transition: all 0.3s ease;
+}
+
+.cta-buttons a.btn:hover {
+    background-color: #F1572A;
+    color: white;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #515252;
+    color: #FFFFFF; 
+    padding: 100px 0 100px;
+    width: 100%;
+    font-family: 'Karla', sans-serif;
+}
+
+.footer .container-fluid {
+    max-width: 1735px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(20px, 6vw, 115px);
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.footer-column {
+    width: auto;
+}
+
+.footer-logo {
+    font-family: 'Karla', sans-serif;
+    font-weight: 500;
+    font-size: 55px;
+    line-height: 103%;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.social-icons {
+    display: flex;
+    gap: 19px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.social-icon {
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url('images/social-icons.png');
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+}
+
+.social-icon:hover {
+    opacity: 1;
+}
+
+/* Sprite Positions (ASSUMING 32x32 icons in a horizontal row) */
+.social-icon.facebook  { background-position: 0 0; }
+.social-icon.twitter   { background-position: -37px 0; } 
+.social-icon.instagram { background-position: -74px 0; }
+.social-icon.linkedin  { background-position: -111px 0; }
+.social-icon.youtube   { background-position: -148px 0; }
+
+.footer-nav h5.footer-title {
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    margin-bottom: 26px;
+}
+
+.footer-nav p {
+    font-family: 'Karla', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.48;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    margin-bottom: 22px;
+}
+
+.footer-nav p:last-child {
+    margin-bottom: 0;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: 'Karla', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.48;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    margin-bottom: 22px;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1556px) {
+    .cities-overlay {
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .map-container {
+        height: 600px;
+    }
+
+    .cities-overlay {
+        transform: translateX(-50%) translateY(-200px);
+    }
+    
+    .cities-overlay .card {
+        padding: 30px 20px;
+    }
+    
+    .cities-overlay .card-header h2 {
+        font-size: 36px;
+    }
+    
+    .cities-overlay .card-header h2 span {
+        font-size: 50px;
+    }
+
+    .city-tags li {
+        gap: 15px;
+    }
+
+    #cta-section {
+        height: auto;
+        min-height: 300px;
+    }
+
+    .cta-heading {
+        font-size: 36px;
+    }
+
+    .cta-heading .ms-madi-text {
+        margin-top: 0;
+    }
+
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .cta-buttons a.btn {
+        display: block;
+        width: 80%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Footer Responsive Adjustments */
+    .footer {
+        padding: 50px 0;
+    }
+
+    .footer-container {
+        justify-content: flex-start; 
+        gap: clamp(20px, 5vw, 60px);
+    }
+
+    .footer-column {
+        width: 100%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-container {
+        gap: 0;
+    }
+
+    .footer-nav:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Media query for 480px and below */
+@media (max-width: 480px) {
+    .city-tags {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        justify-items: center;
+    }
+
+    .city-tags li {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .cities-overlay .card {
+        padding: 20px 15px;
+    }
+
+    .cities-overlay .card-header h2 {
+        font-size: 28px;
+    }
+
+    .cities-overlay .card-header h2 span {
+        font-size: 40px;
+    }
+
+    .cta-heading {
+        font-size: 32px;
+    }
+
+    .cta-heading .ms-madi-text {
+        font-size: 48px;
+    }
+}
